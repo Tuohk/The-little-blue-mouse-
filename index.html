@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div class="cartoon">
+    <div class="head">
+    <div class="ear ear-left"></div>
+    <div class="ear ear-right"></div>
+    <div class="eyes"></div>
+    <div class="nose"></div>
+    <div class="lip"></div>
+  </div>
+  <div class="body">
+    <div class="hand hand-right"></div>
+    <div class="hand hand-left"></div>
+  </div>
+  </div>
+</body>
+<style >
+  body {
+    display: flex;
+    justify-content: center;
+    padding-top: 150px;
+  }
+  .cartoon {
+    position: relative;
+  }
+
+  .cartoon .head {
+    position: relative;
+    height: 125px;
+    width: 155px;
+    background: #94e1fd;
+    border-radius: 80px 89px 55px 55px;
+    top: 6px;
+    border: 4px solid black;
+  }
+
+  .cartoon .head::after{
+    content: "";
+    position: absolute;
+    bottom: -43%;
+    width: 40px;
+    height: 50px;
+    background: white;
+    border-bottom-left-radius: 50%;
+    border-bottom-right-radius: 50%;
+    left: 42%;
+  }
+
+  .ear {
+    position: absolute;
+    width: 78px;
+    height: 78px;
+    background: pink;
+    border-radius: 38% 62% 57% 43% / 45% 48% 52% 55%;
+    border: 4px solid black;
+  }
+
+  .ear-left {
+    top: -24%;
+  left: -24%;
+  border-bottom-color: #94e1fd;
+  transform: rotate(-49deg);
+  box-shadow: inset 6px 20px 0px 12px #94e1fd, inset -20px 18px 0 0px #94e1fd, inset 3px -9px 0 0px #94e1fd;
+  
+  }
+
+  .ear-right {
+  left: 65%;
+  top: -24%;
+  transform: rotate(-227deg);
+  z-index: -1;
+  box-shadow: inset 20px -4px 0px 13px #94e1fd, inset 20px -11px 0 0px #94e1fd, inset 20px 19px 0 0px #94e1fd;
+ 
+}
+
+  
+.ear-left:before {
+  content: "";
+  width: 4px;
+  height: 6px;
+  border-radius: 50%;
+  background: black;
+  position: absolute;
+  top: 31px;
+  left: 110%;
+  transform: rotate(-76deg);
+  box-shadow: 15px 12px, 30px 0px;
+  opacity: 0;
+}
+
+  .ear-right {
+    left: 65%;
+    top: -24%;
+}
+
+ .eyes {
+  position: absolute;
+  width: 14px;
+  height: 10px;
+  background: black;
+  border-radius: 50%;
+  box-shadow: 65px 0px;
+  top: 46%;
+  left: 28%;
+  animation: eyes 2s infinite linear;
+ }
+ 
+ .eyes::after{
+  position: absolute;
+  content: '';
+  width: 14px;
+  height: 3px;
+  background: black;
+  border-radius: 50%;
+  bottom: -57%;
+  box-shadow: 65px 0px;
+ }
+ 
+ 
+ .nose {
+  position: absolute;
+  width: 31px;
+  height: 35px;
+  background: #6f69ef;
+  border-radius: 53% 47% 59% 41% / 73% 76% 24% 27%;
+  /* 斜杠前后的四个值顺序代表   左上角 右上角 右下角 左下角*/
+  /* 斜杠前代表水平方向      斜杠后代表垂直方向*/
+  border: 4px solid black;
+  top: 43%;
+  left: 43%;
+ }
+ .lip {
+  position: absolute;
+  width: 34px;
+  height: 4px;
+  background: black;
+  border-radius: 25%;
+  top: 83%;
+  left: 45%;
+  animation: lip 2s infinite linear;
+ }
+ .body {
+  position: relative;
+  z-index: -1;
+}
+.body:after,
+.body:before {
+  content: "";
+  border-radius: 50%;
+  width: 44px;
+  height: 105px;
+  border: 4px solid;
+  position: absolute;
+  background: #94e1fd;
+  border-right-color: transparent;
+  left: 24%;
+  top: -8px;
+}
+.body:after {
+  left: 46%;
+  border-left-color: transparent;
+  border-right-color: black;
+}
+
+.hand {
+  border-right-color: transparent;
+  width: 34px;
+  height: 55px;
+  border-radius: 71% 29% 22% 78% / 17% 78% 22% 83%;
+  background: #94e1fd;
+  border: 4px solid;
+  position: absolute;
+  left: 8%;
+  top: -2px;
+  border-top-color: #94e1fd;
+  transform: rotate(39deg);
+  animation: hand 2s infinite linear ;
+}
+.hand-left {
+  left: 63%;
+  transform: rotate(-27deg);
+  border-radius: 59% 41% 32% 68% / 20% 62% 38% 80%;
+}
+
+@keyframes eyes {
+  100% {
+    height: 30px;
+    top: 22%;
+    width: 10px;
+  }
+}
+
+@keyframes lip {
+  100% {
+    height: 20px;
+    width: 20px;
+    border-radius: 50%;
+  }
+}
+</style>
+</html>
